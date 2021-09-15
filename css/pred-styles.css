@@ -87,8 +87,19 @@ div {
     margin: 0px 100px 70px;
 }
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 table {
     width: 100%;
+}
+
+.hide {
+    display: none;
 }
 
 /* BUG  label need to be changed to table row name*/
@@ -136,4 +147,72 @@ button:hover {
     color: blueviolet;
   
     cursor: pointer;
+}
+
+/* responsive css for all devices */
+
+@media only screen and (max-width: 920px){
+    .show {
+        display: none;
+    }
+
+    .hide {
+        display: initial;
+    }
+
+    tr td:nth-child(1) {
+        width: 30%;
+    }
+
+    tr td:nth-child(2) {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+
+    .navbar {
+      float: none;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .heading {
+        padding-top: 145px;
+    }
+
+    .heading {
+        font-size: 2rem;
+    }
+
+    .sub-heading {
+        margin: 20px 20px;
+        font-size: 1.5rem;
+    }
+
+    .form {
+        margin: 0px 20px 50px;
+        /* margin: 0px; */
+    }
+
+    button {
+        padding: 4px;
+        margin: 4px 4px 4px 0px;
+    }
+
+    .show {
+        display: none;
+    }
+
+    .hide {
+        display: initial;
+    }
+
+    tr td:nth-child(1) {
+        width: 30%;
+    }
+
+    tr td:nth-child(2) {
+        width: 70%;
+    }
 }

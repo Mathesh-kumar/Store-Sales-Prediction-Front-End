@@ -225,13 +225,13 @@ main {
 
 /* responsiveness for all devices */
 
-@media only screen and (max-width: 801px){
+@media only screen and (max-width: 920px){
   .flex-container {
     flex-direction: column;
 
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
   }
 
   .home-content {
@@ -244,15 +244,11 @@ main {
   }
 
   .background {
-    /* height: 100%; */
     min-height: 50vh;
   }
 
   .home-img {
     margin-left: 0;
-
-    /* width: 300px;
-    height: 200px; */
   }
 
   .about-h1 {
@@ -261,16 +257,12 @@ main {
 
   .about-content {
     margin-top: 30px;
+    margin-bottom: 40px;
   }
 
   .about-img {
     margin-top: 0;
   }
-
-  /* .about-img {
-    width: 300px;
-    height: 200px;
-  } */
 
   .con-h1 {
     margin-top: 30px;
@@ -289,17 +281,27 @@ main {
 
 @media only screen and (max-width: 450px) {
 
+  .navbar {
+    float: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .flex-main {
+    margin-top: 147px;
+  }
+
   .flex-container {
     flex-direction: column;
 
     justify-content: center;
     align-items: center;
-    justify-content: space-around;
   }
 
   .home-content {
     margin-top: 30px;
     margin-bottom: 30px;
+    margin-left: 30px;
   }
 
   .home-h1 {
@@ -320,6 +322,10 @@ main {
     height: 200px;
   }
 
+  .about-content {
+    margin-bottom: 40px;
+  }
+
   .about-h1 {
     font-size: 1.5rem; 
   }
@@ -332,5 +338,9 @@ main {
   .con-h1 {
     font-size: 1.5rem;
     margin-left: 30px;
+  }
+
+  .con-data {
+    width: 330px;
   }
 }
