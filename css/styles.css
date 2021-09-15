@@ -1,3 +1,5 @@
+/* css properties common for the whole page */
+
 * {
   padding: 0px;
   margin: 0px;
@@ -16,19 +18,17 @@ p {
   font-family: "Fauna One", serif;
 }
 
+/* css properties for navbar (header) */
+
 .navbar {
   background-color: #333;
   overflow: hidden;
   padding: 20px;
-
   position: fixed;
   width: 100%;
-  z-index: 5;
+  
+  top: 0;
 }
-
-/* .home-container {
-    margin-top: 66px;
-} */
 
 .navbar a {
   padding: 0px 25px 0px 10px;
@@ -54,23 +54,36 @@ i {
 
 .predictor-float-right {
   float: right;
+
+  margin-right: 33px;
 }
 
-.container {
-  position: relative;
+/* css properties for main (body) */
+
+.flex-main {
+  display: flex;
+  margin-top: 63px;
+  flex-direction: column;
 }
 
-.home-container {
-  height: 700px;
+main {
   background-image: linear-gradient(to bottom right, pink, lightblue);
   background-attachment: fixed;
 }
 
-.home-content {
-  position: absolute;
-  top: 180px;
-  left: 60px;
+/* css properties for each section inside main */
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.background {
+  min-height: 100vh;
+}
+
+/* css properties  for home section*/
 
 .home-h1 {
   font-size: 1.5rem;
@@ -82,19 +95,18 @@ i {
 }
 
 .home-para {
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .home-img {
-  position: absolute;
-  top: 150px;
-  left: 800px;
   width: 500px;
   height: 300px;
   border-radius: 50px;
 
   border: 3px solid rgb(253, 124, 101);
   padding: 8px;
+
+  margin-left: 50px;
 }
 
 .home-para {
@@ -121,80 +133,68 @@ i {
   cursor: pointer;
 }
 
+/* css properties for about section */
+
 .about-img {
-  position: absolute;
-  top: 200px;
-  left: 60px;
   width: 500px;
   height: 300px;
   border-radius: 50px;
-
   border: 3px solid rgb(253, 124, 101);
+
   padding: 8px;
 }
 
 .about-content {
-  position: absolute;
-  top: 110px;
-  left: 600px;
+  margin-bottom: 180px;
 }
 
 .about-h1 {
   font-size: 2rem;
   font-weight: bold;
   float: right;
-  padding-right: 50px;
+
+  margin: 0px 50px 70px 0px;
 }
 
 .about-para {
   font-size: 1.3rem;
-  padding: 50px 50px 0px 50px;
+  padding: 20px 50px 0px 50px;
   text-align: justify;
   line-height: 1.6;
   clear: right;
+
+  max-width: 600px;
 }
 
-.contributors-content {
-  position: absolute;
-  top: 60px;
-  left: 60px;
-}
+/* css properties for contributors section */
 
-.contributors-h1 {
+.con-h1 {
   font-size: 2rem;
+  margin-left: 50px;
+}
+
+.con-content {
+  display: flex;
+  justify-content: space-around;
+
+  margin-top: 30px;
 }
 
 .con-data {
   width: 350px;
   height: 450px;
   border-radius: 50px;
-
-  position: absolute;
-  top: 50px;
-  left: 50px;
 }
 
-.con-details {
-  position: absolute;
-  top: -50px;
-  left: -10px;
+.con-data:hover {
+  box-shadow: 0 4px 8px 0 palevioletred, 0 6px 20px 0 palevioletred;
 }
 
 .con-image {
-  position: absolute;
-  top: 80px;
-  left: 72px;
   width: 220px;
   height: 200px;
   border-radius: 50%;
-}
-
-.con-name {
-  position: absolute;
-  top: 320px;
-
-  right: -341.1px;
-  left: 28px;
+  margin: 40px 0px 20px 65px;
 }
 
 .con-name h1 {
@@ -211,34 +211,126 @@ i {
 }
 
 .con-contact {
-  position: absolute;
-  top: 378px;
-  left: 56px;
+  margin: 20px 0px 0px 70px;
 }
 
 .con-contact i {
   font-size: 40px;
-  padding-right: 22px;
 }
 
 .con-contact i:hover {
   color: blueviolet;
 }
 
-.con-data:hover {
-  box-shadow: 0 4px 8px 0 palevioletred, 0 6px 20px 0 palevioletred;
 
-  /* background-color: white; */
+/* responsiveness for all devices */
+
+@media only screen and (max-width: 801px){
+  .flex-container {
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .home-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  #about {
+    flex-direction: column-reverse;
+  }
+
+  .background {
+    /* height: 100%; */
+    min-height: 50vh;
+  }
+
+  .home-img {
+    margin-left: 0;
+
+    /* width: 300px;
+    height: 200px; */
+  }
+
+  .about-h1 {
+    margin-bottom: 10px;
+  }
+
+  .about-content {
+    margin-top: 30px;
+  }
+
+  .about-img {
+    margin-top: 0;
+  }
+
+  /* .about-img {
+    width: 300px;
+    height: 200px;
+  } */
+
+  .con-h1 {
+    margin-top: 30px;
+  }
+
+  .con-content {
+    margin-bottom: 40px;
+  }
+
+  .con-data {
+    box-shadow: 0 4px 8px 0 palevioletred, 0 6px 20px 0 palevioletred;
+
+    margin-bottom: 40px;
+  }
 }
 
-.con2-data {
-  margin-left: 400px;
-}
+@media only screen and (max-width: 450px) {
 
-.con2-name {
-  top: 305px;
-}
+  .flex-container {
+    flex-direction: column;
 
-.con3-data {
-  margin-left: 800px;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .home-content {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .home-h1 {
+    font-size: 1rem;
+  }
+  
+  .home-h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .home-para {
+    max-width: 350px;
+  }
+  
+  .home-img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .about-h1 {
+    font-size: 1.5rem; 
+  }
+
+  .about-img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .con-h1 {
+    font-size: 1.5rem;
+    margin-left: 30px;
+  }
 }
